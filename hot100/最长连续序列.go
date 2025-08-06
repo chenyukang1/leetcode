@@ -1,4 +1,4 @@
-package main
+package hot100
 
 /**
 https://leetcode.cn/problems/longest-consecutive-sequence
