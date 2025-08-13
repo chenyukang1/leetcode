@@ -40,7 +40,7 @@ func isValidSudoku(board [][]byte) bool {
 		for j := 0; j < 9; j++ {
 			if (j+1)%3 == 0 {
 				visited := make([]bool, 9)
-				for m := i; m <= m+2; m++ {
+				for m := i; m <= i+2; m++ {
 					for k := j - 2; k <= j; k++ {
 						if board[m][k] != '.' {
 							idx := board[m][k] - '0' - 1
