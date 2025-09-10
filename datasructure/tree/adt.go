@@ -13,6 +13,19 @@ type BinaryNode[T Comparable[T]] struct {
 	Data  T
 }
 
+type IntWrapper struct {
+	Value int
+}
+
+func (a IntWrapper) CompareTo(b IntWrapper) int {
+	if a.Value < b.Value {
+		return -1
+	} else if a.Value > b.Value {
+		return 1
+	}
+	return 0
+}
+
 func Contains[T Comparable[T]](data T, node *BinaryNode[T]) bool {
 	if node == nil {
 		return false
@@ -25,6 +38,21 @@ func Contains[T Comparable[T]](data T, node *BinaryNode[T]) bool {
 	} else {
 		return Contains(data, node.Right)
 	}
+}
+
+func Search[T Comparable[T]](data T, root *BinaryNode[T]) *BinaryNode[T] {
+	node := root
+	for node != nil {
+		res := node.Data.CompareTo(data)
+		if res < 0 {
+			node = node.Right
+		} else if res > 0 {
+			node = node.Left
+		} else {
+			break
+		}
+	}
+	return node
 }
 
 func Insert[T Comparable[T]](data T, node *BinaryNode[T]) *BinaryNode[T] {
@@ -65,6 +93,8 @@ func Remove[T Comparable[T]](data T, node *BinaryNode[T]) *BinaryNode[T] {
 	}
 	return node
 }
+
+// 惰性删除
 
 func findMin[T Comparable[T]](node *BinaryNode[T]) *BinaryNode[T] {
 	if node == nil {
