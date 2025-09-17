@@ -28,8 +28,8 @@ func maxProfit2(prices []int) int {
 	}
 	// dp[i][0] 第i+1天持有股票的最多钱
 	// dp[i][1] 第i+1天不持有股票的最多钱
-	// dp[i][0] = max{dp[i-1][0], -prices[i]}
-	// dp[i][1] = max{dp[i-1][1], dp[i-1][0] + prices[i]}
+	// dp[i][0] = maxInt{dp[i-1][0], -prices[i]}
+	// dp[i][1] = maxInt{dp[i-1][1], dp[i-1][0] + prices[i]}
 	dp := make([][2]int, len(prices))
 	dp[0][0] = -prices[0]
 	dp[0][1] = 0
