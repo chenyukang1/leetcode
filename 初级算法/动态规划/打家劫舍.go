@@ -48,6 +48,7 @@ func rob_opt(nums []int) int {
 	// dp[i] 到i房屋为止，偷到的最高金额
 	// dp[0] = nums[0]
 	// dp[1] = max{nums[0], nums[1]}
+	// i-1没被偷就等于dp[i-2]
 	// dp[i] = max{dp[i-1], dp[i-2]+nums[i]}
 	if len(nums) < 2 {
 		return nums[0]
