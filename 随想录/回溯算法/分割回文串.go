@@ -1,5 +1,7 @@
 package 回溯算法
 
+//https://leetcode.cn/problems/palindrome-partitioning/description/
+
 func partition(s string) [][]string {
 	var ans [][]string
 	var split []string
