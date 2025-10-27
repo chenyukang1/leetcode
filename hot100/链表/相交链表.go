@@ -1,4 +1,4 @@
-package hot100
+package 链表
 
 // https://leetcode.cn/problems/intersection-of-two-linked-lists/?envType=study-plan-v2&envId=top-100-liked
 
