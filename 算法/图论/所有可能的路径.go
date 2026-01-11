@@ -1,4 +1,4 @@
-package 图论
+package graph
 
 // https://leetcode.cn/problems/all-paths-from-source-to-target/description/
 
