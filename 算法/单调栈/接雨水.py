@@ -17,7 +17,6 @@ class Solution:
                     short = min(height[stack[-1]], height[i])
                     area = (short - height[cur_idx]) * (i - stack[-1] - 1)
                     ans += area
-
             stack.append(i)
 
         return ans
