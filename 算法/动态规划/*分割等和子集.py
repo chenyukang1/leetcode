@@ -24,6 +24,19 @@ class Solution:
 
         return back_track(0, 0)
 
+    def canPartition2(self, nums: List[int]) -> bool:
+        all_sum = sum(nums)
+        if all_sum % 2 == 1:
+            return False
+        target = all_sum // 2
+        n = len(nums)
+        dp = [0] * (all_sum + 1)
+        for i in range(n):
+            for j in range(target, nums[i], -1):
+                dp[j] = max(dp[j], dp[j - nums[i]] + nums[i])
+
+        return dp[target] == target
+
 
 if __name__ == "__main__":
     s = Solution()
