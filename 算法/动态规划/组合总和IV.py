@@ -7,6 +7,7 @@ class Solution:
         # dp[i] 表示总和为i的排列数
         dp = [0] * (target + 1)
         dp[0] = 1
+        # 先背包再物品
         for i in range(target + 1):
             for j in range(len(nums)):
                 if i >= nums[j]:
